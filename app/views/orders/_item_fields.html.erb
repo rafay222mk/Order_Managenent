@@ -1,0 +1,11 @@
+<div class="nested-fields">
+  <%= link_to_remove_association 'Remove item', f, class: 'btn btn-danger' %>
+  <div class="form_design" >
+    <%= f.label :Item_Name %>
+      <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form_design" >
+    <%= f.label :Quantity %>
+     <%= f.number_field :quantity, class: 'form-control' %>
+  </div>
+</div>

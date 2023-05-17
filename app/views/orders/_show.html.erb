@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Show Page</title>
+    </head>
+
+    <body>
+        <div class='container' >
+            <div class="modal-body" >
+                <p>
+                    <strong> Order Name:</strong>
+                    <%= @order.name %>
+                </p>
+                    <% if @order.items.present? %>
+                        <table class="table table-striped" >
+                        <thead>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        </thead>
+                        <tbody>
+                        <% @order.items.each do |oitem| %>
+                            <tr>
+                            <td><%= oitem.name %></td>
+                            <td><%= oitem.quantity %></td>
+                            </tr>
+                        <% end %>
+                        </tbody>
+                    </table>
+                    <% end %>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary close-modal" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </body>
+
+</html>

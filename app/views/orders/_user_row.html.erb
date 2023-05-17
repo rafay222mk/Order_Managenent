@@ -1,0 +1,6 @@
+<tr id="userRow_<%= order.id %>" >
+    <td><%= order.name %></td>
+    <td><%= link_to 'Show', order , data: { bs_toggle: 'modal', bs_target: '#showordermodal', remote: true },class: "btn btn-info" %></td>
+    <td><%= link_to 'Edit', edit_order_path(order) , data: { bs_toggle: 'modal', bs_target: '#editordermodal', remote: true } ,class: "btn btn-warning" %></td>
+    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: "btn btn-danger"  %></td>
+</tr>   

@@ -1,0 +1,6 @@
+<% if @order.errors.any?  %>
+     $("#errorarea").html("<%= escape_javascript render( 'error' , order: @order) %>");
+<% else %>
+    $("#userTable").prepend("<%= escape_javascript render( 'user_row' , order: @order) %>");
+    $(".close-modal").click();
+<% end %> 

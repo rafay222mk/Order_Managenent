@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>Index Page</title>
+  </head>
+
+  <body>
+    <div class='container' >
+      <p id="notice"><%= notice %></p>
+
+      <h1>Orders</h1>
+
+      <table class="table table-hover" >
+        <thead>
+          <tr>
+            <th>Order Name</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody id="userTable" >
+          <% @orders.each do |order| %>
+            <%= render 'user_row' , order: order %>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Order', new_order_path , data: { bs_toggle: 'modal', bs_target: '#newordermodal', remote: true }, class: "btn btn-success" %>
+
+      <!-- Create Order Modal -->
+      <div class="modal fade" id="newordermodal" tabindex="-1" aria-labelledby="newordermodalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newordermodalLabel"> Create Order </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="newuserform" >
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Edit User Modal -->
+      <div class="modal fade" id="editordermodal" tabindex="-1" aria-labelledby="editordermodalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editordermodalLabel"> Edit Order </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="edituserform" >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit User Modal -->
+      <div class="modal fade" id="showordermodal" tabindex="-1" aria-labelledby="showordermodalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="showordermodalLabel"> Order Details </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="showorderdetails" >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+  </body>
+
+</html>
