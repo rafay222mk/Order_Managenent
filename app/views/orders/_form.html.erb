@@ -1,17 +1,16 @@
 
-    <div style=" display: flex; justify-content: center; background-color:  #f0f2f5">
-    <div style="background-color:  white; padding: 50px; margin: 30px; border-radius: 10px; ">
-        <%= form_with(model: order , local: false ) do |form| %>
-            
-            <h2 style="text-align: center"  >
-            <% if order.id.present? %>
-            Edit 
-            <% else %>
-            Create
-            <% end %>
-            Product
-            </h2>
-          <div class="modal-body">
+<div style=" display: flex; justify-content: center; background-color:  #f0f2f5">
+  <div style="background-color:  white; padding: 50px; margin: 30px; border-radius: 10px; ">
+    <%= form_with(model: order , local: false ) do |form| %>        
+      <h2 style="text-align: center"  >
+        <% if order.id.present? %>
+          Edit 
+        <% else %>
+          Create
+        <% end %>
+          Product 
+       </h2>
+        <div class="modal-body">
 
           <div id="errorarea">
           </div>
